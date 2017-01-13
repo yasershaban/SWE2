@@ -4,6 +4,8 @@
 * Git and Github.
 * Design Patterns.
 * Web Servers Understanding.
+* Extensible programming.
+* Automation Test.
 
 ## Code Conventions
 ...
