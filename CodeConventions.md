@@ -39,10 +39,10 @@ public void firstSecond ( argu1, argu2, ... ) {
  * ...
  * etc
 **/
-public class myClass {
+public class MyClass {
 
 
-} // end class myClass
+} // end class MyClass
 ```
 
 * Any control statment `if, while, for, ...` follows this pattern (Multi-comment before it, comment after the end curly brace, comment before any line)
