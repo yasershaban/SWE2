@@ -1,6 +1,10 @@
 \documentclass{article}
 \usepackage{graphicx}
-
+\usepackage{booktabs}
+\usepackage{color, colortbl}
+\definecolor{Gray}{gray}{0.9}
+\definecolor{LightCyan}{rgb}{0.88,1,1}
+\usepackage[first=0,last=9]{lcg}
 
 \begin{document}
 
@@ -31,13 +35,21 @@
   \textit{system actors}, every one of them sees the system differently
   according to their role.
 
+\section{System Actors}
 \subsection{Root}
 \hspace{0.5cm} \textit{The Root} is the owner of the system. He is the one
 who set it up for the first time with a special root access from him.
 The Root also specifies the system settings like penalties,
-bonuses on the rate and ratio of the profit on each Employer-Freelancer deal.
-\\
+bonuses on the rate and ratio of the profit on each Employer-Freelancer deal. \\
 Besides, He add \textit{Admins} to manage the system.
+
+
+
+
+
+
+
+
 
 \subsection{Admin}
 \hspace{0.5cm} \textit{Admins} are the managers of the system. They have
@@ -77,12 +89,122 @@ and sure the freelancer is paid.
 
 
 \section {Diagrams}
-These diagrams abstract FMS due to several points of views
-\subsection{Domain Diagram}
-\subsection{Class Diagram}
-\subsection{Use Case Diagram}
-\subsection{Class Diagram}
-\subsection{System Sequence Diagrams}
+
+\section{Use Case -- \textit{in detail}}
+\subsection{Access Root}
+    \begin{tabular}{ l | l }
+    \toprule
+      \rowcolor{LightCyan}
+      \textbf{Use Case Name}    & \textit{Root Access}\\
+      \textbf{Actors}           & \textit{Root --- Exclusively}\\
+      \rowcolor{LightCyan}
+      \textbf{Pre--condition}   & \textit{1. At configuration time for the very first use.} \\
+      \rowcolor{LightCyan}
+                                & \textit{2. Root is given a default password.}\\
+      \textbf{Basic Flow}       & \textit{1. Open the System}\\
+                                & \textit{2. Enter `root` in the user name text box}\\
+                                & \textit{3. Enter `0000` in the password text box}\\
+      \rowcolor{LightCyan}
+      \textbf{Post--condition}  & \textit{have full control of FMS settings}\\
+    \toprule
+    \end{tabular}
+
+\subsection{Specify Penalties}
+    \begin{tabular}{ l | l }
+    \toprule
+      \rowcolor{LightCyan}
+      \textbf{Use Case Name}    & \textit{Specify Penalties}\\
+      \textbf{Actors}           & \textit{Root --- Exclusively}\\
+      \rowcolor{LightCyan}
+      \textbf{Pre--condition}   & \textit{Root Access}\\
+      \textbf{Basic Flow}       & \textit{1. Open the system with the Root Access}\\
+                                & \textit{2. Click on Specifies Penalties}\\
+                                & \textit{3. Fill the Data}\\
+                                & \textit{4. Click submit}\\
+      \rowcolor{LightCyan}
+      \textbf{Post--condition}  & \textit{Penalties is configurted}\\
+    \toprule
+    \end{tabular}
+
+\subsection{Add Admin}
+    \begin{tabular}{ l | l }
+    \toprule
+      \rowcolor{LightCyan}
+      \textbf{Use Case Name}    & \textit{Add Admin}\\
+      \textbf{Actors}           & \textit{Root --- Exclusively}\\
+      \rowcolor{LightCyan}
+      \textbf{Pre--condition}   & \textit{Root Access}\\
+      \textbf{Basic Flow}       & \textit{1. Open the system with the Root Access}\\
+                                & \textit{2. Click Add Admin}\\
+                                & \textit{3. Specify its data}\\
+                                & \textit{4. Click submit}\\
+      \rowcolor{LightCyan}
+      \textbf{Post--condition}  & \textit{Admin is added}\\
+    \toprule
+    \end{tabular}
+
+
+
+\subsection{Remove Admin}
+    \begin{tabular}{ l | l }
+    \toprule
+      \rowcolor{LightCyan}
+      \textbf{Use Case Name}    & \textit{Remove Admin}\\
+      \textbf{Actors}           & \textit{Root --- Exclusively}\\
+      \rowcolor{LightCyan}
+      \textbf{Pre--condition}   & \textit{Root Access}\\
+      \textbf{Basic Flow}       & \textit{1. Open the system with the Root Access}\\
+                                & \textit{2. Click Remove Admin}\\
+                                & \textit{3. Choose the Admin [drop down list}\\
+                                & \textit{4. Click submit}\\
+      \rowcolor{LightCyan}
+      \textbf{Post--condition}  & \textit{Admin is removed}\\
+    \toprule
+    \end{tabular}
+
+
+
+
+
+\subsection{Block Admin}
+    \begin{tabular}{ l | l }
+    \toprule
+      \rowcolor{LightCyan}
+      \textbf{Use Case Name}    & \textit{Block Admin}\\
+      \textbf{Actors}           & \textit{Root --- Exclusively}\\
+      \rowcolor{LightCyan}
+      \textbf{Pre--condition}   & \textit{Root Access}\\
+      \textbf{Basic Flow}       & \textit{1. Open the system with the Root Access}\\
+                                & \textit{2. Click Block Admin}\\
+                                & \textit{3. Choose the Admin [drop down list}\\
+                                & \textit{4. Click submit}\\
+      \rowcolor{LightCyan}
+      \textbf{Post--condition}  & \textit{Addmin is removed and is put in the block list}\\
+    \toprule
+    \end{tabular}
+
+
+
+\subsection{Unblock Admin}
+    \begin{tabular}{ l | l }
+    \toprule
+      \rowcolor{LightCyan}
+      \textbf{Use Case Name}    & \textit{Unblock Admin}\\
+      \textbf{Actors}           & \textit{Root --- Exclusively}\\
+      \rowcolor{LightCyan}
+      \textbf{Pre--condition}   & \textit{Root Access}\\
+      \textbf{Basic Flow}       & \textit{1. Open the system with the Root Access}\\
+                                & \textit{2. Click Unblock Admin}\\
+                                & \textit{3. Choose the Admin [drop down list}\\
+                                & \textit{4. Click submit}\\
+      \rowcolor{LightCyan}
+      \textbf{Post--condition}  & \textit{}\\
+    \toprule
+    \end{tabular}
+
+
+
+
 
 \section{Call Us}
 
