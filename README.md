@@ -6,6 +6,9 @@
 - Extensible programming.
 - Automation Testing.
 - Project Management.
+- **Hipernate**    moooooooooooore imporatnt
+- **javaFX**	   moooooooooooore imporatnt	
+
 
 
 ## Links
